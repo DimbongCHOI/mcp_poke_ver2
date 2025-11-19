@@ -1,14 +1,25 @@
-name: pokemon-mcp-server
-version: 1.0.0
-description: 포켓몬 정보를 조회하고 검색할 수 있는 MCP 서버
-author: DimbongCHOI
-
-runtime:
-  type: nodejs
-  version: 18
-
-entrypoint: src/server.js
-
-dependencies:
-  - "@modelcontextprotocol/sdk@^0.5.0"
-  - "axios@^1.6.0"
+name: "@DimbongCHOI/mcp_poke_ver2"
+version: "1.0.0"
+description: "포켓몬 정보를 조회하고 검색할 수 있는 MCP 서버"
+author: "DimbongCHOI"
+license: "MIT"
+categories:
+  - "utilities"
+  - "pokemon"
+runtime: "nodejs"
+main: "src/server.js"
+build:
+  script: "npm install"
+  output: "src/server.js"
+env:
+  NODE_ENV: "production"
+homepage: "https://github.com/DimbongCHOI/mcp_poke_ver2"
+repository: "https://github.com/DimbongCHOI/mcp_poke_ver2"
+readme: "README.md"
+icon: "🎮"
+capabilities:
+  tools: true
+  resources: false
+  prompts: false
+config:
+  requires_api_key: false
