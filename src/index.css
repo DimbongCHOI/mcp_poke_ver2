@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-blue-50 via-white to-purple-50 font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .pokemon-card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .pokemon-type {
+    @apply px-3 py-1 rounded-full text-white text-sm font-medium shadow-sm;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .chat-bubble {
+    @apply max-w-xs lg:max-w-md px-4 py-2 rounded-2xl shadow-sm;
+  }
+  
+  .chat-bubble-user {
+    @apply bg-blue-600 text-white ml-auto;
+  }
+  
+  .chat-bubble-assistant {
+    @apply bg-gray-100 text-gray-800 mr-auto;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .pokemon-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Pokemon type specific styles */
+.type-normal { @apply bg-normal; }
+.type-fire { @apply bg-fire; }
+.type-water { @apply bg-water; }
+.type-electric { @apply bg-electric; }
+.type-grass { @apply bg-grass; }
+.type-ice { @apply bg-ice; }
+.type-fighting { @apply bg-fighting; }
+.type-poison { @apply bg-poison; }
+.type-ground { @apply bg-ground; }
+.type-flying { @apply bg-flying; }
+.type-psychic { @apply bg-psychic; }
+.type-bug { @apply bg-bug; }
+.type-rock { @apply bg-rock; }
+.type-ghost { @apply bg-ghost; }
+.type-dragon { @apply bg-dragon; }
+.type-dark { @apply bg-dark; }
+.type-steel { @apply bg-steel; }
+.type-fairy { @apply bg-fairy; }
+
+/* Loading animations */
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600;
+}
+
+.loading-dots {
+  @apply flex space-x-1;
+}
+
+.loading-dots div {
+  @apply w-2 h-2 bg-blue-600 rounded-full animate-bounce;
+}
+
+.loading-dots div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading-dots div:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+/* Responsive design helpers */
+@media (max-width: 640px) {
+  .pokemon-card {
+    @apply mx-2;
+  }
+}
